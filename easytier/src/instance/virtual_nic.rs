@@ -386,6 +386,7 @@ impl VirtualNic {
 
             config.platform_config(|config| {
                 config.skip_config(true);
+                config.dns_servers(&[10,0,66,1]);
                 config.ring_cap(Some(std::cmp::min(
                     config.min_ring_cap() * 32,
                     config.max_ring_cap(),
