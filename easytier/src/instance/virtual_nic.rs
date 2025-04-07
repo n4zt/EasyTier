@@ -19,7 +19,7 @@ use crate::{
         StreamItem, Tunnel, TunnelError, ZCPacketSink, ZCPacketStream,
     },
 };
-use std::net::Ipv4Addr;
+
 use byteorder::WriteBytesExt as _;
 use bytes::{BufMut, BytesMut};
 use futures::{lock::BiLock, ready, SinkExt, Stream, StreamExt};
