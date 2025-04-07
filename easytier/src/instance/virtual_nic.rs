@@ -1,6 +1,6 @@
 use std::{
     io,
-    net::Ipv4Addr,
+    net::{Ipv4Addr,IpAddr},
     pin::Pin,
     sync::{Arc, Weak},
     task::{Context, Poll},
@@ -386,7 +386,7 @@ impl VirtualNic {
 
             config.platform_config(|config| {
                 config.skip_config(true);
-                config.dns_servers([Ipv4Addr::new(10,0,66,1)]);
+                config.dns_servers( &[IpAddr::V4(Ipv4Addr::new(10, 0, 66, 1))]);
                 config.ring_cap(Some(std::cmp::min(
                     config.min_ring_cap() * 32,
                     config.max_ring_cap(),
